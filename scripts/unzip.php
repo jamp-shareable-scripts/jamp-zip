@@ -68,7 +68,7 @@ echo "Extracting $zipFilepath to $targetItem" . PHP_EOL;
 if ($filetype === '.tar.gz') {
 	$gz = new PharData($zipFilepath);
 	$result = $gz->extractTo($targetItem);
-	if ($result && $deleteInput()) {
+	if ($result && $deleteInput) {
 		unlink($zipFilepath);
 	}
 }
